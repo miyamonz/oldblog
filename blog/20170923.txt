@@ -17,5 +17,11 @@ git で別ブランチからコピーするとかはあるので、
  commitする
 の処理をすればいいだけ
 
-今日はだるいので手動でやろう
-シェルスクリプトでできるのではないだろうか
+とりあえず、
+ blogフォルダのテキストをpreタグで囲んでbodyにappend
+ dst/index.htmlに出力
+ gh-pagesにcheckout
+ $ mv dst/index.html index.html
+ $ git add index.html
+という処理を書いてみた
+
