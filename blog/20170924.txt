@@ -2,3 +2,8 @@
 
 pre毎にborderかけて、せめてpost毎が見分けつくようにという感じにした
 新しいのが上に来るようにした (reverseするだけだけど)
+
+deploy するscriptを書いた
+これでコマンド一発でjs実行してgh-pagesでcommitしてdeployできる（但し、index.html出すだけで、dstフォルダ内全部addするようになってない）
+
+次は以前書いたテキストをパースして変換するやつをやってみたい
