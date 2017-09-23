@@ -2,7 +2,7 @@ const fs = require("fs")
 const cheerio = require("cheerio")
 
 const template = fs.readFileSync("./src/index.html").toString();
-const $ = cheerio.load(template)
+const $ = cheerio.load(template, { decodeEntities: false  })
 
 
 const blogDir = "./blog/";
