@@ -15,7 +15,8 @@ fs.readdir(blogDir, (err, files)=> {
   try{
     fs.statSync("./dst")
   }catch(e) {
-    fs.mkdir("./dst", err => console.log(err));
+    fs.mkdirSync("./dst");
+    console.log("dst folder created");
   }
   fs.writeFileSync("./dst/index.html", $.html())
 })
