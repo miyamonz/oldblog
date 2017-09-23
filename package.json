@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "node index.js; git co gh-pages; mv dst/index.html index.html; git add index.html; echo 'try git commit and push'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
