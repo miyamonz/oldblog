@@ -12,6 +12,11 @@ fs.readdir(blogDir, (err, files)=> {
     $("body").append(`<pre>${content}</pre>`);
 
   })
+  try{
+    fs.statSync("./dst")
+  }catch(e) {
+    fs.mkdir("./dst", console.log);
+  }
   fs.writeFile("./dst/index.html", $.html(), console.log)
 })
 
