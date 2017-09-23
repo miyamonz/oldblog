@@ -5,6 +5,6 @@ node index.js
 git checkout gh-pages
 mv dst/index.html index.html
 git add index.html
-git commit -m 'new post'
+git commit -m 'deploy'
 git push
 git checkout master
