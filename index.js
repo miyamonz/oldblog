@@ -7,7 +7,7 @@ const $ = cheerio.load(template, { decodeEntities: false  })
 
 const blogDir = "./blog/";
 fs.readdir(blogDir, (err, files)=> {
-  files.forEach(file => {
+  files.reverse().forEach(file => {
     const content = fs.readFileSync(blogDir + file).toString();
     $("body").append(`<pre>${content}</pre>`);
 
