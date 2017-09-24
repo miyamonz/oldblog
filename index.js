@@ -5,19 +5,19 @@ const template = fs.readFileSync("./src/index.html").toString();
 const $ = cheerio.load(template, { decodeEntities: false  })
 
 
+const blogsToJson = require("./parse")
 const blogDir = "./blog/";
-fs.readdir(blogDir, (err, files)=> {
-  files.reverse().forEach(file => {
-    const content = fs.readFileSync(blogDir + file).toString();
-    $("body").append(`<pre class="${file}">${content}</pre>`);
+const jsons = blogsToJson(blogDir);
+jsons.forEach( json => {
+  content = json.lines.join("<br>");
+  $("body").append(`<div class="article ${json.file}">${content}</div>`);
+} )
 
-  })
-  try{
-    fs.statSync("./dst")
-  }catch(e) {
-    fs.mkdirSync("./dst");
-    console.log("dst folder created");
-  }
-  fs.writeFileSync("./dst/index.html", $.html())
-})
+try{
+  fs.statSync("./dst")
+}catch(e) {
+  fs.mkdirSync("./dst");
+  console.log("dst folder created");
+}
+fs.writeFileSync("./dst/index.html", $.html())
 
